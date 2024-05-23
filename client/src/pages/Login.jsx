@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { TextField } from "@mui/material";
+import { TextField, Checkbox } from "@mui/material";
 import logo from "../assets/logotitle.svg";
 import loginpic from "../assets/login.svg";
 
@@ -17,7 +17,6 @@ const Login = () => {
 
   const userLogin = async (e) => {
     e.preventDefault();
-    dispatch(loginUser)
     const response = await axios.post(
       "http://localhost:8000/api/user/login",
       {
@@ -28,11 +27,11 @@ const Login = () => {
     // console.log(response.data);
     if (response.data.success) {
       localStorage.setItem("token", response.data.token);
-          navigate("/dashboard");
+          navigate("/");
     } else {
       alert("Email or password incorrect!");
     }
-    console.log("LoginData", LoginData);
+    // console.log("LoginData", LoginData);
     setLoginData(loginForm);
   };
 
@@ -54,13 +53,15 @@ const Login = () => {
           <img src={loginpic} alt="login pic" />
         </div>
         <div className="flex flex-1 items-center justify-center">
-          <form className="flex flex-col items-center justify-center bg-white rounded-xl w-[27.5rem] h-[25.9rem]"
+          <form className="flex flex-col items-center justify-center bg-white rounded-xl w-[27.5rem] h-[25.9rem] px-16 gap-4"
             onSubmit={userLogin}
           >
-            <span>Welcome to TMS</span>
-            <span>Trading & Analytics Platform</span>
+            <div className="flex flex-col w-full">
+            <span className="text-[#004D71] text-[16px]">Welcome to TMS</span>
+            <span className="text-[#232323] text-[22px]">Trading & Analytics Platform</span>
+            </div>
+            <div>
             <TextField
-              // value={customerLoginData.email}
               name="email"
               onChange={(e) => handleChange(e)}
               type="email"
@@ -68,17 +69,23 @@ const Login = () => {
               label="User ID / Email"
             />
             <TextField
-              // value={customerLoginData.password}
-
               type="password"
               name="password"
               className="rounded-xl border-[1px] bg-[#F8FAFB] border-[#AFAFAF] w-[19.8rem] h-[4.43rem] px-[1.25rem] "
               onChange={(e) => handleChange(e)}
               label="Password"
             />
+            <div className="flex flex-row items-center justify-between">
+              <div className="">
+            <Checkbox/>
+            <span className="text-[#2C2C2E] text-[12px]">Remember me</span>
+            </div>
             <Link to="/forgotpass">
-              <span>Forgot your password?</span>
+              <span className="text-[#4D47C3] text-[12px] flex self-end">Forgot your password?</span>
             </Link>
+            </div>
+            </div>
+            
             <button
               type="submit"
               className="h-[2.8rem] w-[20.06rem] bg-[#2C67FF] font-medium text-white text-[16px] rounded-xl"
