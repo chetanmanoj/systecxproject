@@ -149,7 +149,7 @@ export default function Home() {
             <ListItem
               key={index}
               disablePadding
-              sx={{ display: "block" }}
+              sx={{ display: "block", }}
               onClick={() => setPage(section.title)}
             >
               <ListItemButton
@@ -159,7 +159,7 @@ export default function Home() {
                   px: 2.5,
                 }}
               >
-                {/* <ListItemIcon
+                <ListItemIcon
                   sx={{
                     minWidth: 0,
                     mr: open ? 3 : "auto",
@@ -167,11 +167,16 @@ export default function Home() {
                     fontSize: "1.5rem",
                   }}
                 >
-                  <section.icon />
-                </ListItemIcon> */}
+                  <img src={section.icon} alt={section.title} 
+                   style={{ fill: page === section.title ? '#2C67FF' : '#383838'}}
+                  />
+                </ListItemIcon>
                 <ListItemText
                   primary={section.title}
-                  sx={{ opacity: open ? 1 : 0 }}
+                  sx={{ opacity: open ? 1 : 0 ,  fontWeight:500,
+                      color: page === section.title ? '#2C67FF' : '#383838'
+
+                   }}
                 />
               </ListItemButton>
             </ListItem>
@@ -179,18 +184,18 @@ export default function Home() {
         </List>
         <Divider />
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3, color: "#000" }}>
+      <Box component="main" sx={{ flexGrow: 1,  color: "#000" }}>
         <DrawerHeader />
         {page === "Dashboard" && <Dashboard />}
-        {page === "Customers" && <Dashboard />}
+        {/* {page === "Customers" && <Dashboard />} 
         {page === "Suppliers" && <Dashboard />}
         {page === "Financial Institutions" && <Dashboard />}
-        {page === "Products" && <Dashboard />}
+        {page === "Products" && <Dashboard />} */}
         {page === "Trading" && <Transactions />}
-        {page === "Reports" && <Dashboard />}
+       {/*  {page === "Reports" && <Dashboard />}
         {page === "Sales" && <Dashboard />}
         {page === "Purchases" && <Dashboard />}
-        {page === "FAQ" && <Dashboard />}
+        {page === "FAQ" && <Dashboard />} */}
       </Box>
     </Box>
   );
