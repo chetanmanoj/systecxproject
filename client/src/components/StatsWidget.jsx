@@ -6,7 +6,7 @@ const StatsWidget = (props) => {
         <img src={props.icon} alt="Insight" className="w-12 h-12"/>
         <div className="flex flex-col">
             <span className="text-[36px] text-[#383874]">{props.number}</span>
-            <span className="text[12px] text-[#969FB6]">{props.text}</span>
+            <span className="text[12px] font-semibold text-[#969FB6]">{props.text}</span>
         </div>
     </div>
   )

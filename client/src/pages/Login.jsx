@@ -51,7 +51,7 @@ const Login = () => {
           {/* <img src="https://i.ibb.co/8DYn3kP/loginpic.png" alt="login pic" /> */}
           <img src={loginpic} alt="login pic" />
         </div>
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 items-center justify-center font-poppins">
           <form
             className="flex flex-col items-center justify-center bg-white rounded-xl w-[27.5rem] h-[25.9rem] px-16 gap-4"
             onSubmit={userLogin}
@@ -125,7 +125,7 @@ const Login = () => {
         </div>
       </div>
       {/* Footer */}
-      <div className="px-36">
+      <div className="px-36 font-gilroy">
         <span className="font-normal">Powered by</span>{" "}
         <span className=" font-semibold">STX Platform</span>
       </div>

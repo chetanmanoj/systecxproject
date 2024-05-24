@@ -1,4 +1,11 @@
-import { transfer, customers, aneesh, nita } from "../assets"
+import { transfer, customers, aneesh, nita, userpfp } from "../assets"
+
+export const user = [
+    {
+        pfp: userpfp,
+        name: 'Vishwanath'
+    }
+]
 
 export const insights1 = [
     {
@@ -42,18 +49,49 @@ export const notif = [
         pfp: aneesh,
         name: 'Aneesh Thomas',
         task: 'Freight charges',
+        tag:'TR-22-00001',
         time: '3h'
     },
     {
         pfp: nita,
         name: 'Nita Chakravarty',
         task: 'Freight',
+        tag:'TR-22-00001',
         time: '3h'
     },
     {
         pfp: aneesh,
         name: 'Aneesh Thomas',
         task: 'Freight',
+        tag:'TR-22-00001',
         time: '3h'
+    },
+]
+
+export const trades = [
+    {
+        icon: transfer,
+        number: '12',
+        text: 'CONTRACT STAGE'
+    },
+    {
+        icon: customers,
+        number: '20',
+        text: 'PRE SHIPMENT'
+    },
+    {
+        icon: transfer,
+        number: '8',
+        text: 'POST FIXTURES VESSEL'
+    },
+    {
+        icon: transfer,
+        number: '5',
+        text: 'IN - TRANSIT'
+    },
+    {
+        icon: transfer,
+        number: '5',
+        text: 'PRE CLOSURE'
     },
 ]

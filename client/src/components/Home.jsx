@@ -149,7 +149,7 @@ export default function Home() {
             <ListItem
               key={index}
               disablePadding
-              sx={{ display: "block", }}
+              sx={{ display: "block", fontFamily:'poppins' }}
               onClick={() => setPage(section.title)}
             >
               <ListItemButton

@@ -6,6 +6,8 @@ import products from "./sectionicons/products.svg";
 import suppliers from "./sectionicons/suppliers.svg";
 import transfer from "./sectionicons/transfer.svg";
 
+import userpfp from "./userpfp.png"
+
 import aneesh from "./aneesh.png";
 import nita from "./nita.png";
 
@@ -19,4 +21,5 @@ export {
   transfer,
   aneesh,
   nita,
+  userpfp,
 };
